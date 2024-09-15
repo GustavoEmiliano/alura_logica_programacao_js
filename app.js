@@ -6,31 +6,35 @@ console.log(`O número secreto é ${numeroSecreto}`);
 let chute;
 let tentativas = 1;
 
-// enquanto chute não for igual ao número secreto
+// Enquanto o chute não for igual ao número secreto
 while (chute != numeroSecreto) {
   chute = prompt("Escolha um número entre 1 e 10");
   console.log(`O chute foi ${chute}`);
 
   // Se o chute for igual ao número secreto:
   if (chute == numeroSecreto) {
-    alert(
-      `Isso aí, você descobriu o número secreto ${numeroSecreto} com ${tentativas} tentativas`
-    );
     console.log("Acertou o número");
+    break;
   }
-  // Senão, faça isso:
+  // Senão, verifique se o chute é maior ou menor que o número secreto
   else {
-    // Se o chute for maior que o número secreto, exiba que o número secreto é menor que o chute
     if (chute > numeroSecreto) {
       alert(`O número secreto é menor que ${chute}`);
-    }
-    // Senão, exiba que o número secreto é maior que o chute
-    else {
+    } else {
       alert(`O número secreto é maior que ${chute}`);
     }
-    // tentativas = tentativas + 1;
     tentativas++;
   }
 }
 
 console.log(`O chute foi ${chute} e o número secreto é ${numeroSecreto}.`);
+
+if (tentativas > 1) {
+  alert(
+    `Isso aí, você descobriu o número secreto ${numeroSecreto} com ${tentativas} tentativas`
+  );
+} else {
+  alert(
+    `Isso aí, você descobriu o número secreto ${numeroSecreto} com ${tentativas} tentativa`
+  );
+}
